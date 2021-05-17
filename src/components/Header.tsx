@@ -41,7 +41,7 @@ export function Header() {
             color: 'gray.400'
           }}
         />
-        <Icon as={RiSearchLine} fontSize={20} />
+        <Icon as={RiSearchLine} fontSize="20" />
       </Flex>
 
       <Flex
