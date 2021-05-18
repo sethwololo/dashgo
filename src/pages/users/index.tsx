@@ -15,6 +15,7 @@ import {
   useBreakpointValue
 } from "@chakra-ui/react";
 import { RiAddLine, RiPencilLine } from 'react-icons/ri';
+import Link from 'next/link';
 
 import { Header } from "../../components/Header";
 import { Pagination } from "../../components/Pagination";
@@ -33,19 +34,20 @@ export default function UsersList() {
       <Flex w="100%" my="6" maxW={1480} mx="auto" px={["4", "6"]}>
         <Sidebar />
 
-        <Box flex="1" borderRadius={8} bg="gray.800" p={["4","8"]}>
+        <Box flex="1" borderRadius={8} bg="gray.800" p={["4", "8"]}>
           <Flex mb="8" justify="space-between" align="center">
             <Heading size="lg" fontWeight="normal">Usuários</Heading>
-
-            <Button
-              as="a"
-              size="sm"
-              fontSize={["xs", "sm"]}
-              colorScheme="pink"
-              leftIcon={isWideVersion ? <Icon as={RiAddLine} fontSize="20" /> : undefined}
-            >
-              {isWideVersion ? 'Criar novo usuário' : <Icon as={RiAddLine} fontSize="20" />}
-            </Button>
+            <Link href="/users/create" passHref>
+              <Button
+                as="a"
+                size="sm"
+                fontSize={["xs", "sm"]}
+                colorScheme="pink"
+                leftIcon={isWideVersion ? <Icon as={RiAddLine} fontSize="20" /> : undefined}
+              >
+                {isWideVersion ? 'Criar novo usuário' : <Icon as={RiAddLine} fontSize="20" />}
+              </Button>
+            </Link>
           </Flex>
 
           <Table colorScheme="whiteAlpha">
@@ -67,7 +69,7 @@ export default function UsersList() {
                 <Td>
                   <Box>
                     <Text fontWeight="bold" fontSize={["xs", "md"]}>Matheus Henrique Moura Bezerra</Text>
-                    <Text fontSize={["xs","sm"]} color="gray.300">sethwololo@gmail.com</Text>
+                    <Text fontSize={["xs", "sm"]} color="gray.300">sethwololo@gmail.com</Text>
                   </Box>
                 </Td>
                 {isWideVersion && <Td>17 de maio de 2021</Td>}
