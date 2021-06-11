@@ -23,7 +23,6 @@ import { RiAddLine, RiPencilLine } from 'react-icons/ri';
 import { Header } from "../../components/Header";
 import { Pagination } from "../../components/Pagination";
 import { Sidebar } from "../../components/Sidebar";
-import { useEffect } from "react";
 
 export default function UsersList() {
   const { data, isLoading, error } = useQuery('users', async () => {
@@ -42,6 +41,8 @@ export default function UsersList() {
     });
 
     return users;
+  }, {
+    staleTime: 1000 * 5 // 5 sec
   });
 
   const isWideVersion = useBreakpointValue({
