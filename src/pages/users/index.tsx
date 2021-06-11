@@ -20,10 +20,10 @@ import {
 import { useQuery } from 'react-query';
 import { RiAddLine, RiPencilLine } from 'react-icons/ri';
 
-import { Header } from "../../components/Header";
-import { Pagination } from "../../components/Pagination";
-import { Sidebar } from "../../components/Sidebar";
-import { api } from '../../services/api';
+import { Header } from "components/Header";
+import { Pagination } from "components/Pagination";
+import { Sidebar } from "components/Sidebar";
+import { api } from 'services/api';
 
 export default function UsersList() {
   const { data, isLoading, isFetching, error } = useQuery('users', async () => {
