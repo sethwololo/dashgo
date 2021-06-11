@@ -12,7 +12,7 @@ export function ActiveLink({
   shouldMatchEactHref = false,
   ...rest
 }: ActiveLinkProps) {
-  const {asPath} = useRouter();
+  const { asPath } = useRouter();
 
   let isActive = false;
 
@@ -21,7 +21,7 @@ export function ActiveLink({
   }
 
   if (!shouldMatchEactHref && (
-    asPath.startsWith(String(rest.href))  || asPath.startsWith(String(rest.as))
+    asPath.startsWith(String(rest.href)) || asPath.startsWith(String(rest.as))
   )) {
     isActive = true;
   }
